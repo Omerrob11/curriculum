@@ -57,7 +57,12 @@ The method shown above opens links in the same tab as the webpage containing the
 While `href` specifies the destination link, `target` specifies where the linked resource will be opened. If it is not present, then, by default, it will take on the `_self` value which opens the link in the current tab. To open the link in a new tab or window (depends on browser settings) you can set it to `_blank` as follows:
 
 ```html
-<a href="https://www.theodinproject.com/about" target="_blank" rel="noopener noreferrer">About The Odin Project</a>
+<a
+  href="https://www.theodinproject.com/about"
+  target="_blank"
+  rel="noopener noreferrer"
+  >About The Odin Project</a
+>
 ```
 
 <span id="target-security"></span>You may have noticed that we snuck in the `rel` attribute above. This attribute is used to describe the relation between the current page and the linked document.
@@ -89,7 +94,7 @@ We've already seen an absolute link in action. The link we created to The Odin P
 
 Links to other pages within our own website are called relative links. Relative links do not include the domain name, since it is another page on the same site, it assumes the domain name will be the same as the page we created the link on.
 
-Relative links only include the file path to the other page, *relative* to the page you are creating the link on. This is quite abstract, let's see this in action using an example.
+Relative links only include the file path to the other page, _relative_ to the page you are creating the link on. This is quite abstract, let's see this in action using an example.
 
 Within the `odin-links-and-images` directory, create another HTML file named `about.html` and paste the following code into it:
 
@@ -97,7 +102,7 @@ Within the `odin-links-and-images` directory, create another HTML file named `ab
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Odin Links and Images</title>
   </head>
 
@@ -128,7 +133,7 @@ Create a directory named `pages` within the `odin-links-and-images` directory an
 
 Refresh the index page in the browser and then click on the about link. It will now be broken. This is because the location of the about page file has changed.
 
-To fix this, we just need to update the about link href value to include the `pages/` directory since that is the new location of the about file *relative* to the index file.
+To fix this, we just need to update the about link href value to include the `pages/` directory since that is the new location of the about file _relative_ to the index file.
 
 ```html
 <body>
@@ -139,7 +144,7 @@ To fix this, we just need to update the about link href value to include the `pa
 
 Refresh the index page in the browser and try clicking the about link again, it should now be back in working order.
 
-In many cases, this will work just fine; however, you can still run into unexpected issues with this approach. Prepending `./` before the link will in most cases prevent such issues. By adding  `./` you are specifying to your code that it should start looking for the file/directory *relative* to the `current` directory.
+In many cases, this will work just fine; however, you can still run into unexpected issues with this approach. Prepending `./` before the link will in most cases prevent such issues. By adding `./` you are specifying to your code that it should start looking for the file/directory _relative_ to the `current` directory.
 
 ```html
 <body>
@@ -166,9 +171,9 @@ For example, using an absolute path we can display an image located on The Odin 
 
 <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="gORbExZ" data-user="TheOdinProjectExamples" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
 
-  <span>See the Pen <a href="https://codepen.io/TheOdinProjectExamples/pen/gORbExZ">
-  absolute-path-image</a> by TheOdinProject (<a href="https://codepen.io/TheOdinProjectExamples">@TheOdinProjectExamples</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
+<span>See the Pen <a href="https://codepen.io/TheOdinProjectExamples/pen/gORbExZ">
+absolute-path-image</a> by TheOdinProject (<a href="https://codepen.io/TheOdinProjectExamples">@TheOdinProjectExamples</a>)
+on <a href="https://codepen.io">CodePen</a>.</span>
 
 </p>
 
@@ -194,7 +199,7 @@ When you download a file from the internet, Windows has a security feature that 
 
 1. Create a new directory named `images` within the `odin-links-and-images` project.
 
-1. Next, [download the stock dog image](https://unsplash.com/photos/Mv9hjnEUHR4/download?force=true&w=640).
+1. Next, we try to do some change
 
 1. Right click on the new download at the bottom of the chrome window and select "Show in folder".
 
@@ -202,17 +207,17 @@ When you download a file from the internet, Windows has a security feature that 
 
 1. Drag the file from your downloads folder to VSCode's file browser into your new `images` directory.
 
-    1. Alternatively, using your Ubuntu terminal, navigate to the folder you want to copy the image to (`cd ~/odin-links-and-images` for example)
+   1. Alternatively, using your Ubuntu terminal, navigate to the folder you want to copy the image to (`cd ~/odin-links-and-images` for example)
 
-    1. Type `cp <space>`
+   1. Type `cp <space>`
 
-    1. Drag the `dog.jpg` image from a Windows Explorer window and drop it onto the terminal window, it should appear as `"/mnt/c/users/username/Downloads/dog.jpg"`
+   1. Drag the `dog.jpg` image from a Windows Explorer window and drop it onto the terminal window, it should appear as `"/mnt/c/users/username/Downloads/dog.jpg"`
 
-    1. Type `<space> .` to tell cp that you want to copy the file to your current working directory.
+   1. Type `<space> .` to tell cp that you want to copy the file to your current working directory.
 
-        1. The full command will look something like `cp "/mnt/c/users/username/Downloads/dog.jpg" .`
+      1. The full command will look something like `cp "/mnt/c/users/username/Downloads/dog.jpg" .`
 
-    1. Hit <kbd>Enter</kbd> to complete the command, and use ls to confirm the file now exists.
+   1. Hit <kbd>Enter</kbd> to complete the command, and use ls to confirm the file now exists.
 
 Dragging files from Windows into the VSCode file browser prevents the `Zone.Identifier` files from being copied over. From now on, any time you need to copy pictures or other downloaded files like this into WSL2, you can do it in this way. If you ever accidentally copy these `Zone.Identifier` files into WSL2, you can safely delete them without any issue.
 
@@ -227,7 +232,7 @@ Finally add the image to the `index.html` file:
 
   <a href="./pages/about.html">About</a>
 
-  <img src="./images/dog.jpg">
+  <img src="./images/dog.jpg" />
 </body>
 ```
 
@@ -240,7 +245,7 @@ What if we want to use the dog image in the about page? We would first have to g
 <span id="parent-filepath"></span>To go to the parent directory we need to use two dots in the relative filepath like this: `../`. Let's see this in action, within the body of the `about.html` file, add the following image below the heading we added earlier:
 
 ```html
-<img src="../images/dog.jpg">
+<img src="../images/dog.jpg" />
 ```
 
 To break this down:
@@ -261,9 +266,9 @@ This is how the The Odin Project logo example we used earlier looks with an alt 
 
 <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="ExXjoEp" data-user="TheOdinProjectExamples" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
 
-  <span>See the Pen <a href="https://codepen.io/TheOdinProjectExamples/pen/ExXjoEp">
-  image-alt-attribute</a> by TheOdinProject (<a href="https://codepen.io/TheOdinProjectExamples">@TheOdinProjectExamples</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
+<span>See the Pen <a href="https://codepen.io/TheOdinProjectExamples/pen/ExXjoEp">
+image-alt-attribute</a> by TheOdinProject (<a href="https://codepen.io/TheOdinProjectExamples">@TheOdinProjectExamples</a>)
+on <a href="https://codepen.io">CodePen</a>.</span>
 
 </p>
 
@@ -282,9 +287,9 @@ Here is our Odin Project logo example with height and width tags included:
 
 <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="PogmYGp" data-user="TheOdinProjectExamples" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
 
-  <span>See the Pen <a href="https://codepen.io/TheOdinProjectExamples/pen/PogmYGp">
-  Image Height and Width Attributes</a> by TheOdinProject (<a href="https://codepen.io/TheOdinProjectExamples">@TheOdinProjectExamples</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
+<span>See the Pen <a href="https://codepen.io/TheOdinProjectExamples/pen/PogmYGp">
+Image Height and Width Attributes</a> by TheOdinProject (<a href="https://codepen.io/TheOdinProjectExamples">@TheOdinProjectExamples</a>)
+on <a href="https://codepen.io">CodePen</a>.</span>
 
 </p>
 
@@ -323,5 +328,5 @@ This section contains helpful links to related content. It isn't required, so co
 
 - [Interneting is hard's treatment on HTML links and images](https://internetingishard.netlify.app/html-and-css/links-and-images)
 - [What happened the day Google decided links including (`/`) were malware](https://www.itpro.co.uk/609724/google-apologises-after-blacklisting-entire-internet)
-- [Chris Coyier's When to use target="_blank" on CSS-Tricks](https://css-tricks.com/use-target_blank/)
+- [Chris Coyier's When to use target="\_blank" on CSS-Tricks](https://css-tricks.com/use-target_blank/)
 - If you're looking to deepen your understanding of the various image formats used on the web, [the following article which is titled: Which is the Best Image Format for Your Website?](https://imagekit.io/blog/best-image-format-for-web/) from imagekit.io is a great resource. It offers a detailed comparison of JPEG, PNG, GIF, and WebP formats, helping you choose the right one for your needs. Note that the article doesn't cover SVG, but it's still an excellent guide for the other common formats.
