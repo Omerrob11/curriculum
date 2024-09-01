@@ -199,7 +199,7 @@ When you download a file from the internet, Windows has a security feature that 
 
 1. Create a new directory named `images` within the `odin-links-and-images` project.
 
-1. Next, we try to do some change
+1. Next, we try to do some change - again some change
 
 1. Right click on the new download at the bottom of the chrome window and select "Show in folder".
 
